@@ -12,8 +12,8 @@ export const VercelDeploy = () => {
     const envDescription = '&envDescription=Have questions about these requirements?'
     const envLink =
       '&envLink=https://github.com/SweetmanTech/NOT_YET_NO/blob/main/.env.local.example'
-    const projectName = '&project-name=hello sweets' + title
-    const repositoryName = '&repository-name=hello sweets' + title
+    const projectName = '&project-name=' + title
+    const repositoryName = '&repository-name=' + title
     const demoTitle = '&demo-title=Drop Page'
     const demoDescription =
       '&demo-description=A forkable drop page help musicians be more sovereign with their drops.'
