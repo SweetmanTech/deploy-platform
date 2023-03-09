@@ -1,53 +1,32 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { useRouter } from 'next/router'
-import { Header } from 'components/Header'
+import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
+import { VercelDeploy } from 'components/VercelDeploy'
 import { Seo } from 'components/Seo'
 
-const Home: NextPage = () => {
-  const router = useRouter()
-
-  const handleKeyDown = (e: any) => {
-    if (e.key === 'Enter') {
-      router.push('/inputTitle')
-    }
-  }
-
-  const handleClick = (e: any) => {
-    router.push('/inputTitle')
-  }
-
-  return (
-    <div>
-      <Seo
-        title="Create"
-        description="The place to begin experimenting with onchain curation."
-      />
-      <Header route="https://www.neosound.xyz/" routeName='neosound'/>
-      <HeroWrapper>
+const Deploy: NextPage = () => (
+  <div>
+    <Seo title="Drop Page" description="Drop music on your own custom domain." />
+    <Header
+      route="https://github.com/SweetmanTech/deploy-platform"
+      routeName="open source"
+    />
+    <HeroWrapper>
+      <div className="flex flex-col gap-6 sm:gap-8">
         <HeroText
           text={
             <>
               create your&nbsp;<wbr></wbr>
               <span className="hidden sm:block"></span>own&nbsp;
-              <span className="pa-displayLight">platform</span>
+              <span className="pa-displayLight">drop page</span>
             </>
           }
         />
-        <Link href={'./inputTitle'}>
-          <a>
-            <button className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph sm:hover:text-[#ecf1f0]">
-              <span className="mb-1">get started</span>
-              <IoIosArrowRoundForward size={32} />
-            </button>
-          </a>
-        </Link>
-      </HeroWrapper>
-    </div>
-  )
-}
+        <VercelDeploy />
+      </div>
+    </HeroWrapper>
+  </div>
+)
 
-export default Home
+export default Deploy
